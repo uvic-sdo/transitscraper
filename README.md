@@ -9,3 +9,4 @@ Not really sure.
 Respect
 -------
 John Hawthorn <jhawthor@uvic.ca>
+Neither Machine <neithermachine@gmail.com>
