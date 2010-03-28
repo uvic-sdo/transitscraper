@@ -15,14 +15,14 @@ ActiveRecord::Base.establish_connection(
 )
 
 ActiveRecord::Schema.define do
-	create_table :routes, :primary_key => "_id" do |t|
+	create_table :routes, :primary_key => "id" do |t|
 		t.column :number, :string
 		t.column :name, :string
 	end
-	create_table :stops, :primary_key => "_id" do |t|
+	create_table :stops, :primary_key => "id" do |t|
 		t.column :name, :string
 	end
-	create_table :sched_times, :primary_key => "_id" do |t|
+	create_table :sched_times, :primary_key => "id" do |t|
 		t.column :time, :integer
 		t.column :day, :integer
 		t.column :direction, :integer
@@ -33,18 +33,18 @@ ActiveRecord::Schema.define do
 end
 
 class Stop < ActiveRecord::Base
-	set_primary_key '_id'
+	set_primary_key 'id'
 	has_many :sched_times
 	def self.get name
 		Stop.find_by_name(name) || Stop.create(:name=>name)
 	end
 end
 class Route < ActiveRecord::Base
-	set_primary_key '_id'
+	set_primary_key 'id'
 	has_many :sched_times
 end
 class SchedTime < ActiveRecord::Base
-	set_primary_key '_id'
+	set_primary_key 'id'
 	belongs_to :route
 	belongs_to :stop
 end
