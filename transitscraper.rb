@@ -15,14 +15,14 @@ ActiveRecord::Base.establish_connection(
 )
 
 ActiveRecord::Schema.define do
-	create_table :routes, :primary_key => "id" do |t|
+	create_table :routes do |t|
 		t.column :number, :string
 		t.column :name, :string
 	end
-	create_table :stops, :primary_key => "id" do |t|
+	create_table :stops do |t|
 		t.column :name, :string
 	end
-	create_table :sched_times, :primary_key => "id" do |t|
+	create_table :sched_times do |t|
 		t.column :time, :integer
 		t.column :day, :integer
 		t.column :direction, :integer
